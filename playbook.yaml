@@ -1,0 +1,93 @@
+# Investment playbook configuration
+#
+# Every numeric target here is pulled directly from the investment strategy
+# document (Purchase Criteria scorecards, Market Evaluation Framework,
+# Portfolio Allocation, and Tax Model sections). Nothing in investment_model/
+# hardcodes these numbers -- edit this file as the playbook evolves and the
+# model picks up the change automatically.
+
+philosophy:
+  # "Every property should satisfy at least two of the following three
+  # criteria. A property that provides only one is generally not compelling
+  # enough to pursue."
+  min_criteria_met: 2
+  cash_flow_min_annual: 0            # "produces cash flow" = positive annual cash flow
+  appreciation_min_annual_pct: 0.02  # "appreciates" = market appreciation assumption above this
+  tax_benefit_min_annual_savings: 2000  # "creates tax benefits" = meaningful estimated annual tax savings
+
+portfolio_allocation:
+  short_term_rental_pct: 0.40
+  long_term_rental_pct: 0.40
+  appreciation_pct: 0.20
+
+long_term_rental_scorecard:
+  # Reject deals that fail this many or more criteria.
+  reject_at_failures: 2
+  targets:
+    cash_on_cash_return_min: 0.08
+    cap_rate_min: 0.06
+    dscr_min: 1.30
+    vacancy_rate_max: 0.06
+    population_growth: positive        # population_growth_pct > 0
+    job_growth_above_national: true    # job_growth_pct > national_job_growth_benchmark_pct
+    school_rating_min: 7               # 1-10 scale, "good"
+    crime_score_max: 4                 # 1-10 scale, lower = safer, "low"
+    property_age_years_max: 30
+
+short_term_rental_scorecard:
+  reject_at_failures: 2
+  targets:
+    occupancy_pct_min: 0.60
+    adr_growth: increasing             # adr_growth_pct > 0
+    revenue_multiple_min: 0.10         # annual STR revenue / purchase price
+    str_regulations_stable: true
+    nearby_attractions_score_min: 7    # 1-10 scale, "significant"
+    seasonality_score_range: [3, 7]    # 1-10 scale, "moderate" band
+    guest_rating_potential_score_min: 8  # 1-10 scale, "high"
+
+appreciation_scorecard:
+  # No hard numeric targets in the source document -- these are evaluated
+  # qualitatively (1-10 scale each) and averaged into a descriptive score.
+  factors:
+    - population_growth_score
+    - employment_score
+    - corporate_investment_score
+    - infrastructure_score
+    - housing_supply_score
+    - median_income_growth_score
+    - migration_trend_score
+    - historical_appreciation_score
+
+market_framework:
+  # "Score each category from 1 to 10; total score out of 100."
+  categories:
+    - cash_flow_score
+    - appreciation_score
+    - taxes_score
+    - landlord_laws_score
+    - population_growth_score
+    - job_growth_score
+    - tourism_score            # only scored when category == STR
+    - regulatory_stability_score
+    - natural_disaster_risk_score
+    - competition_score
+  pursue_threshold: 60   # out of 100 -- not stated explicitly in the doc; a
+                         # reasonable default bar, adjust as desired.
+
+tax_model:
+  residential_depreciation_years: 27.5
+  default_land_value_pct: 0.20
+  cost_segregation:
+    # "A $50,000-$80,000 first-year deduction from a cost segregation study
+    # is plausible on a $500,000 property but depends on construction type,
+    # land-to-improvement allocation, depreciation rules in effect when
+    # placed in service, and the engineering study's findings."
+    default_reclass_pct_of_building: 0.25   # share of building basis moved to 5/7/15-yr property
+    default_bonus_depreciation_pct: 0.60    # CONFIRM current-year bonus depreciation rate with CPA
+  national_job_growth_benchmark_pct: 0.010  # placeholder national baseline; override per evaluation
+
+financial_defaults:
+  selling_cost_pct: 0.07
+  rent_growth_rate: 0.03
+  expense_growth_rate: 0.03
+  appreciation_rate: 0.03

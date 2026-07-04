@@ -1,0 +1,64 @@
+{
+  "name": "3BR/2BA SFH - Blackman area",
+  "market": "Murfreesboro, TN",
+  "category": "LTR",
+  "acquisition": {
+    "purchase_price": 350000,
+    "down_payment_pct": 0.25,
+    "interest_rate": 0.07,
+    "loan_term_years": 30,
+    "closing_costs": 7000,
+    "renovation_budget": 5000,
+    "furniture_budget": 0
+  },
+  "income": {
+    "annual_rent_or_str_revenue": 30000,
+    "other_income": 600,
+    "vacancy_rate": 0.05
+  },
+  "expenses": {
+    "property_taxes": 3200,
+    "insurance": 1800,
+    "hoa": 0,
+    "maintenance_repairs": 2500,
+    "capex_reserve": 1800,
+    "utilities": 0,
+    "cleaning": 0,
+    "management": 2400,
+    "supplies": 200,
+    "software": 150,
+    "marketing": 0,
+    "licenses": 100
+  },
+  "growth": {
+    "rent_growth_rate": 0.03,
+    "expense_growth_rate": 0.03,
+    "appreciation_rate": 0.035,
+    "selling_cost_pct": 0.07
+  },
+  "market_framework": {
+    "cash_flow_score": 7,
+    "appreciation_score": 6,
+    "taxes_score": 8,
+    "landlord_laws_score": 7,
+    "population_growth_score": 8,
+    "job_growth_score": 7,
+    "regulatory_stability_score": 8,
+    "natural_disaster_risk_score": 7,
+    "competition_score": 6
+  },
+  "ltr_factors": {
+    "population_growth_pct": 0.015,
+    "job_growth_pct": 0.02,
+    "national_job_growth_benchmark_pct": 0.01,
+    "school_rating": 8,
+    "crime_score": 3,
+    "property_age_years": 12
+  },
+  "tax": {
+    "land_value_pct": 0.20,
+    "marginal_tax_rate": 0.32,
+    "use_cost_segregation": false,
+    "reps_or_material_participation": false
+  }
+}

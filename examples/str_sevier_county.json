@@ -1,0 +1,67 @@
+{
+  "name": "4BR Cabin - near Pigeon Forge Parkway",
+  "market": "Sevier County, TN",
+  "category": "STR",
+  "acquisition": {
+    "purchase_price": 500000,
+    "down_payment_pct": 0.20,
+    "interest_rate": 0.075,
+    "loan_term_years": 30,
+    "closing_costs": 10000,
+    "renovation_budget": 15000,
+    "furniture_budget": 25000
+  },
+  "income": {
+    "annual_rent_or_str_revenue": 85000,
+    "other_income": 1500,
+    "vacancy_rate": 0.0
+  },
+  "expenses": {
+    "property_taxes": 2000,
+    "insurance": 4500,
+    "hoa": 1200,
+    "maintenance_repairs": 4000,
+    "capex_reserve": 3000,
+    "utilities": 3600,
+    "cleaning": 9000,
+    "management": 17000,
+    "supplies": 1500,
+    "software": 1200,
+    "marketing": 1000,
+    "licenses": 500
+  },
+  "growth": {
+    "rent_growth_rate": 0.04,
+    "expense_growth_rate": 0.03,
+    "appreciation_rate": 0.04,
+    "selling_cost_pct": 0.08
+  },
+  "market_framework": {
+    "cash_flow_score": 8,
+    "appreciation_score": 7,
+    "taxes_score": 8,
+    "landlord_laws_score": 7,
+    "population_growth_score": 6,
+    "job_growth_score": 6,
+    "tourism_score": 9,
+    "regulatory_stability_score": 6,
+    "natural_disaster_risk_score": 6,
+    "competition_score": 5
+  },
+  "str_factors": {
+    "occupancy_pct": 0.65,
+    "adr_growth_pct": 0.05,
+    "str_regulations_stable": true,
+    "nearby_attractions_score": 9,
+    "seasonality_score": 5,
+    "guest_rating_potential_score": 8
+  },
+  "tax": {
+    "land_value_pct": 0.15,
+    "marginal_tax_rate": 0.35,
+    "use_cost_segregation": true,
+    "cost_seg_reclass_pct_of_building": 0.28,
+    "bonus_depreciation_pct": 0.60,
+    "reps_or_material_participation": true
+  }
+}

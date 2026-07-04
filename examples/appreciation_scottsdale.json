@@ -1,0 +1,66 @@
+{
+  "name": "4BR SFH - North Scottsdale",
+  "market": "Scottsdale, AZ",
+  "category": "Appreciation",
+  "acquisition": {
+    "purchase_price": 750000,
+    "down_payment_pct": 0.30,
+    "interest_rate": 0.07,
+    "loan_term_years": 30,
+    "closing_costs": 12000,
+    "renovation_budget": 0,
+    "furniture_budget": 0
+  },
+  "income": {
+    "annual_rent_or_str_revenue": 36000,
+    "other_income": 0,
+    "vacancy_rate": 0.05
+  },
+  "expenses": {
+    "property_taxes": 6000,
+    "insurance": 2200,
+    "hoa": 1800,
+    "maintenance_repairs": 3000,
+    "capex_reserve": 2500,
+    "utilities": 0,
+    "cleaning": 0,
+    "management": 1800,
+    "supplies": 100,
+    "software": 100,
+    "marketing": 0,
+    "licenses": 0
+  },
+  "growth": {
+    "rent_growth_rate": 0.03,
+    "expense_growth_rate": 0.03,
+    "appreciation_rate": 0.06,
+    "selling_cost_pct": 0.07
+  },
+  "market_framework": {
+    "cash_flow_score": 4,
+    "appreciation_score": 9,
+    "taxes_score": 6,
+    "landlord_laws_score": 6,
+    "population_growth_score": 8,
+    "job_growth_score": 8,
+    "regulatory_stability_score": 7,
+    "natural_disaster_risk_score": 8,
+    "competition_score": 5
+  },
+  "appreciation_factors": {
+    "population_growth_score": 8,
+    "employment_score": 8,
+    "corporate_investment_score": 8,
+    "infrastructure_score": 7,
+    "housing_supply_score": 6,
+    "median_income_growth_score": 7,
+    "migration_trend_score": 8,
+    "historical_appreciation_score": 8
+  },
+  "tax": {
+    "land_value_pct": 0.30,
+    "marginal_tax_rate": 0.32,
+    "use_cost_segregation": false,
+    "reps_or_material_participation": false
+  }
+}
