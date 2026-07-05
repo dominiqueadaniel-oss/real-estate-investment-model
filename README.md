@@ -42,6 +42,32 @@ Output is a markdown (or JSON) report containing:
   needs 2 of 3.
 - An overall **PURSUE / CONSIDER / REJECT** decision with reasons.
 
+## Evaluate a listing directly (no manual JSON, no manual Python)
+
+Claude Code users: this repo includes an `evaluate-listing` skill
+(`.claude/skills/evaluate-listing/SKILL.md`). Paste a listing URL or listing
+details into the chat and ask Claude to evaluate it — it extracts what's
+actually on the listing, gets the one or two genuinely decision-critical
+numbers it can't guess (mainly the rent/revenue estimate), and lets the
+model fill in and flag everything else. No file to hand-write, no command
+to remember.
+
+Under the hood this runs the same CLI, just fed a partial "raw listing"
+JSON instead of a fully-specified property file:
+
+```
+python -m investment_model.cli from-listing examples/raw_listing_huntsville.json
+```
+
+`investment_model/from_listing.py` fills every field the listing didn't
+provide with a documented default or a neutral "needs research" placeholder
+(school ratings, crime, market framework scores, STR occupancy, financing
+terms, etc.) and the report's "Assumptions Used" section lists exactly
+which ones were guessed, so a thin listing never gets presented as a fully
+underwritten deal. Add `--save-property <path>` to also write out the full
+property JSON (e.g. into `examples/`) once you've filled in the real
+numbers and want to keep it.
+
 ## Check portfolio allocation
 
 ```

@@ -106,13 +106,20 @@ def _fmt_money(v: float) -> str:
     return f"${v:,.0f}"
 
 
-def render_markdown(report: EvaluationReport) -> str:
+def render_markdown(report: EvaluationReport, assumptions: list | None = None) -> str:
     p = report.property
     f = report.financials
     t = report.tax
     lines = []
     lines.append(f"# Underwriting Report: {p.name}")
     lines.append(f"*{p.market} -- {p.category}*\n")
+
+    if assumptions:
+        lines.append(f"## Assumptions Used ({len(assumptions)}) -- verify before relying on this report")
+        for asn in assumptions:
+            lines.append(f"- **{asn.field}** = {asn.value} ({asn.reason})")
+        lines.append("")
+
     lines.append(f"## Decision: **{report.decision}**")
     if report.reasons:
         lines.append("Reasons:")

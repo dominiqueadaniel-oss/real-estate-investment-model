@@ -1,0 +1,14 @@
+{
+  "name": "412 Oakwood Dr",
+  "market": "Huntsville, AL",
+  "category": "LTR",
+  "purchase_price": 310000,
+  "year_built": 2015,
+  "hoa": 240,
+  "property_taxes": 1450,
+  "annual_rent_or_str_revenue": 28800,
+  "school_rating": 8,
+  "crime_score": 3,
+  "population_growth_pct": 0.02,
+  "job_growth_pct": 0.025
+}
